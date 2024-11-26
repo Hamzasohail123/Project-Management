@@ -5,9 +5,8 @@ import { useAuth } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import Button from "./Button";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Modal({ isOpen, closeModal, taskToEdit }) {
   const dispatch = useDispatch();
@@ -48,24 +47,21 @@ function Modal({ isOpen, closeModal, taskToEdit }) {
       closeModal();
     }
   };
- 
+
   // const deleteMessage =()=> toast.success('Succesfully deleted')
   const handleDelete = (e) => {
-    if (isSignedIn) {
-      if (taskToEdit) {
-        dispatch(deleteTask(taskToEdit.id));
-        // deleteMessage()
-        closeModal();
-      }
+    if (taskToEdit) {
+      dispatch(deleteTask(taskToEdit.id));
+      // deleteMessage()
+      closeModal();
     } else {
       nevigate("/signin");
     }
   };
-  
 
   return (
     <div>
-        {/* <ToastContainer />  */}
+      {/* <ToastContainer />  */}
       {/* Modal */}
       {isOpen ? (
         <div className="fixed transition ease-in-out delay-150 inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 duration-300 opacity-100">
@@ -149,25 +145,24 @@ function Modal({ isOpen, closeModal, taskToEdit }) {
             {/* Modal Footer */}
             <div className="mt-6 flex justify-end space-x-3">
               <Button
-              text={'Close'}
+                text={"Close"}
                 onClick={closeModal}
                 className="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition-all"
               />
               <Button
                 type="submit"
                 onClick={handleSubmit}
-                text = {taskToEdit ? "Update Task" : "Create new task"}
+                text={taskToEdit ? "Update Task" : "Create new task"}
                 className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all"
               />
 
               {taskToEdit ? (
                 <Button
-                text= {taskToEdit ? 'Delete Task' : null}
+                  text={taskToEdit ? "Delete Task" : null}
                   type="submit"
                   onClick={handleDelete}
                   className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-all"
                 />
-          
               ) : null}
             </div>
           </div>

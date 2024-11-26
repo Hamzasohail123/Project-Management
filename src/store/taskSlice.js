@@ -58,8 +58,9 @@ const taskSlice = createSlice({
     addTask: (state, action) => {
       const newId = state.tasks.length + 1;    
       const newTask = { ...action.payload, id: newId };      
-      state.tasks.push(newTask);  
-      console.log('Current state:', current(state));
+      // state.tasks.push(newTask);  
+      state.tasks.unshift(newTask)
+      // console.log('Current state:', current(state));
     },
     
     updateTask: (state, action) => {

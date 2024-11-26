@@ -9,7 +9,7 @@ import Button from "./Button";
 function Sidebar() {
   const status = useAuth();
   return (
-    <div className="w-52 bg-indigo-600 p-6 shadow-lg">
+    <div className="w-60 bg-indigo-600 p-6 shadow-lg">
       <h1 className="text-white text-xl font-semibold">Workspae Menu</h1>
       <nav className="mt-6">
         <ul className="space-y-4">
@@ -23,7 +23,7 @@ function Sidebar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/tasklists"
               className="text-white hover:text-indigo-300 transition-all"
             >
               Tasks

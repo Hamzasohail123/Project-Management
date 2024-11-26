@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar";
 import Column from "./Column";
 import Modal from "./ModalForm";
 import Button from "./Button";
@@ -24,12 +24,10 @@ function Main() {
   console.log(categorizedTasks.todo);
 
   return (
-    <div className="flex h-screen max-h-screen bg-gray-100">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex w-full bg-gray-100">
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-y-auto  border-2 border-red-500 bg-gray-50 p-6">
+      <div className="flex-1 overflow-y-auto border-2 bg-gray-50 p-6">
         <div className="flex  justify-between items-center">
           <div>
             <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
